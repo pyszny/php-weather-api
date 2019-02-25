@@ -29,7 +29,10 @@ class ReportManager
         $writer = new Xlsx($spreadsheet);
 
         $date = (new \DateTime())->format("Y_m_d");
-        $excelFilePath = "/var/www/html/untitled1/reports/report_{$date}";
+        if (!file_exists('reports')) {
+            mkdir('reports', 0777, true);
+        }
+        $excelFilePath = getcwd() . "/reports/report_{$date}";
         $writer->save($excelFilePath);
     }
 
