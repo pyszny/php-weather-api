@@ -1,6 +1,7 @@
 {
     "require": {
         "phpoffice/phpspreadsheet": "^1.6",
-        "ext-json": "*"
+        "ext-json": "*",
+        "symfony/yaml": "^4.2"
     }
 }

@@ -1,10 +1,18 @@
 <?php
 
+use Symfony\Component\Yaml\Yaml;
+
 class apiClient {
 
     const BASE_URL = 'api.openweathermap.org/data/2.5/weather';
+    private $key;
 
     private $response = [];
+
+    public function __construct()
+    {
+        $this->key = Yaml::parseFile('config.yaml')['key'];
+    }
 
     public function makeApiCall($params)
     {
@@ -23,7 +31,6 @@ class apiClient {
 
     private function buildURI(int $cityId): string
     {
-        return self::BASE_URL . "?id={$cityId}&APPID=0374ff81755de6f7178fdc4ce19ffea9";
+        return self::BASE_URL . "?id={$cityId}&APPID={$this->key}";
     }
-
 }

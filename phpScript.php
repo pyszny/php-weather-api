@@ -4,7 +4,7 @@ require 'apiClient.php';
 require 'ReportManager.php';
 require 'ResponseEditor.php';
 
-$params = array_shift($argv);
+array_shift($argv);
 
 $client = new apiClient();
 $data = $client->makeApiCall($argv);
