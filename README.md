@@ -14,4 +14,6 @@ To run project:
         search for city at: https://openweathermap.org/city
         click at city name
         city ID will appear in URL https://openweathermap.org/city/<cityid>
+        you can put up to 20 ID's at once, each one after space
+        report will appear in reports folder
     
