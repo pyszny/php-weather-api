@@ -2,3 +2,6 @@
 vendor/
 reports/
 .gitignore
+config.yaml
+ArgumentException.php
+ArgumentValidatorExceptionInterface.php
