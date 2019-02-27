@@ -23,7 +23,8 @@ class apiClient {
             curl_setopt($ch, CURLOPT_URL,$url);
             $result=curl_exec($ch);
             curl_close($ch);
-            array_push($this->response, $result);
+            $validatedResult = ResponseStatusValidator::decodeAndValidate($result, $param);
+            array_push($this->response, $validatedResult);
         }
 
         return $this->response;
