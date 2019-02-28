@@ -14,7 +14,7 @@ $client = new apiClient();
 $response = $client->makeApiCall($validatedArguments);
 
 $editor = new ResponseEditor($response);
-
 $editedData = $editor->getValues();
+
 $reportManager = new ReportManager();
 $reportManager->generateReport($editedData);

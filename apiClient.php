@@ -14,7 +14,7 @@ class apiClient {
         $this->key = Yaml::parseFile('config.yaml')['key'];
     }
 
-    public function makeApiCall($params)
+    public function makeApiCall($params): array
     {
         foreach ($params as $param) {
             $url = $this->buildURI($param);

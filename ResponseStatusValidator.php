@@ -4,7 +4,7 @@ require 'CityIdNotFound.php';
 
 class ResponseStatusValidator
 {
-    public static function decodeAndValidate($response, $param)
+    public static function decodeAndValidate(string $response,int $param)
     {
 
         $decodedResponse = json_decode($response, true);
@@ -13,7 +13,6 @@ class ResponseStatusValidator
                 if ($decodedResponse['cod'] == 200) {
                     return $decodedResponse;
                 } else {
-                    //var_dump($decodedResponse);
                     throw CityIdNotFound::showMessage($param);
                 }
             } catch (CityIdNotFound $exception) {

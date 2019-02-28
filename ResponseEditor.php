@@ -10,7 +10,7 @@ class ResponseEditor
         $this->response = $response;
     }
 
-    public function getValues()
+    public function getValues(): array
     {
         foreach ($this->response as $element) {
             $this->editedResponse["{$element['id']}"] = array(
